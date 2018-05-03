@@ -455,3 +455,47 @@ _nexus_repos_yum_defaults:
   strict_content_validation: true
   layout_policy: strict  # strict or permissive
   write_policy: allow_once  # one of "allow", "allow_once" or "deny"
+
+nexus_groovy_scripts_list:
+  - create_blobstore.groovy
+  - create_repo_bower_group.groovy
+  - create_repo_bower_hosted.groovy
+  - create_repo_bower_proxy.groovy
+  - create_repo_docker_group.groovy
+  - create_repo_docker_hosted.groovy
+  - create_repo_docker_proxy.groovy
+  - create_repo_gitlfs_hosted.groovy
+  - create_repo_maven_group.groovy
+  - create_repo_maven_hosted.groovy
+  - create_repo_maven_proxy.groovy
+  - create_repo_npm_group.groovy
+  - create_repo_npm_hosted.groovy
+  - create_repo_npm_proxy.groovy
+  - create_repo_nuget_group.groovy
+  - create_repo_nuget_hosted.groovy
+  - create_repo_nuget_proxy.groovy
+  - create_repo_pypi_group.groovy
+  - create_repo_pypi_hosted.groovy
+  - create_repo_pypi_proxy.groovy
+  - create_repo_raw_group.groovy
+  - create_repo_raw_hosted.groovy
+  - create_repo_raw_proxy.groovy
+  - create_repo_rubygems_group.groovy
+  - create_repo_rubygems_hosted.groovy
+  - create_repo_rubygems_proxy.groovy
+  - create_repo_yum_hosted.groovy
+  - create_repo_yum_proxy.groovy
+  - create_task.groovy
+  - delete_blobstore.groovy
+  - delete_repo.groovy
+  - setup_anonymous_access.groovy
+  - setup_base_url.groovy
+  - setup_capability.groovy
+  - setup_email.groovy
+  - setup_http_proxy.groovy
+  - setup_ldap.groovy
+  - setup_privilege.groovy
+  - setup_realms.groovy
+  - setup_role.groovy
+  - setup_user.groovy
+  - update_admin_password.groovy
