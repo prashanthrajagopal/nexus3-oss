@@ -261,17 +261,22 @@
     state: directory
     owner: root
     group: root
-
+    
+- name: Create directory to hold current groovy scripts for reference
+  file:
+    path: "{{ nexus_data_dir }}/groovy-raw-scripts/new"
+    state: directory
+    owner: root
+    group: root
+    
 - name: Upload new scripts
-  synchronize:
-    archive: no
-    checksum: yes
-    recursive: yes
-    delete: yes
-    mode: push
-    use_ssh_args: yes
-    src: "files/groovy/"
+  copy:
+    src: "files/{{ item }}"
     dest: "{{ nexus_data_dir }}/groovy-raw-scripts/new/"
+    owner: root
+    group: root
+    mode: 0755
+  with_items: "{{ nexus_groovy_scripts_list }}"
 
 - name: Sync new scripts to old and get differences
   shell: 'rsync -ric {{ nexus_data_dir }}/groovy-raw-scripts/new/ {{ nexus_data_dir }}/groovy-raw-scripts/current/ | cut -d" " -f 2 | sed "s/\.groovy//g"'
