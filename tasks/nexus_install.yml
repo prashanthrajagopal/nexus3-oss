@@ -271,7 +271,7 @@
     
 - name: Upload new scripts
   copy:
-    src: "files/{{ item }}"
+    src: "files/groovy/{{ item }}"
     dest: "{{ nexus_data_dir }}/groovy-raw-scripts/new/"
     owner: root
     group: root
